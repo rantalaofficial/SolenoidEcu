@@ -1,0 +1,176 @@
+* {
+    font-family: 'Tahoma';
+    text-align: center;
+}
+
+body {
+    background-color: #e2e2e2;
+}
+
+.mainDiv {
+    margin: auto;
+    width: 70%;
+    background-color: #bebebe;
+    padding: 10px;
+    max-width: 1000px;
+    box-shadow: 5px 5px 5px gray;
+}
+
+h2, p {
+    margin: 5px;
+}
+
+p {
+    font-size: 18px;
+}
+
+span {
+    color: blue;
+}
+
+div {
+    border-radius: 5px;
+}
+
+#infoContainer {
+    display: table;
+    border-spacing: 10px 5px;
+    margin: auto;
+}
+
+.infoDiv {
+    vertical-align: top;
+    display: table-cell;
+    background-color: #e2e2e2;
+    width: 30%;
+    margin: auto;
+    padding: 10px;
+}
+
+#rpmGauge {
+    height: 200px;
+    margin-top: -50px;
+}
+#rpmChart {
+    display: none;
+}
+div.smoothie-chart-tooltip {
+    background: darkgray;
+    padding: 1em;
+    margin-top: 20px;
+    color: white;
+    font-size: 14px;
+    pointer-events: none;
+}
+
+#infoTable {
+    margin: auto;
+}
+
+#controlContainer {
+    display: table;
+    border-spacing: 10px 5px;
+    margin: auto;
+}
+
+.controlDiv {
+    display: table-cell;
+    background-color: #e2e2e2;
+    width: 30%;
+    padding: 10px;
+}
+
+input {
+    background-image: linear-gradient(#bebebe, #e2e2e2);
+    font-weight: 800;
+}
+
+input[type=button] {
+    padding: 10px;
+}
+
+input[type=button]:active {
+    background-color: #bebebe;
+}
+
+input[type=button].pressed {
+    color: blue;
+    border: 3px solid blue;
+}
+
+.onOffBtn {
+    width: 15vw;
+    max-width: 150px;
+    color: red;
+    border: 3px solid red;
+}
+
+input[type=button].on {
+    color: green;
+    border: 3px solid green;
+}
+
+/*SLIDER STYLING*/
+input[type=range] {
+    -webkit-appearance: none;
+    width: 20vw;
+    max-width: 200px;
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: blue;
+    cursor: pointer;
+}
+input[type=range]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: blue;
+    cursor: pointer;
+}
+
+.multilineText {
+    overflow-y: scroll;
+    max-height: 150px;
+    margin: auto;
+    padding: 10px;
+    width: 70%;
+    background-color: #e2e2e2;
+}
+
+.multilineText p {
+    text-align: left;
+    font-size: 14px !important;
+}
+
+/* MOBILE */
+@media only screen and (max-width: 700px) {
+    .mainDiv {
+        width: 90%;
+    }
+
+    .multilineText {
+        width: 90%;
+    }
+
+    .sensorDiv {
+        display: none;
+    }
+
+    h1 {
+        margin: 0px;
+        margin-bottom: 2px;
+    }
+
+    #stroke2Btn {
+        margin-bottom: 4px;
+    }
+
+    h2, p {
+        margin: 2px;
+    }
+}

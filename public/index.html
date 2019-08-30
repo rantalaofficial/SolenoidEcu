@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+        <title>SolenoidECU</title>
+        
+        <!--SOCKET IO FILES-->
+        <script src="/socket.io/socket.io.js"></script>
+        
+        <!--JQUERY FILES-->
+        <script src="jquery-3.4.1.min.js"></script>
+
+        <!--GAUGE FILES-->
+        <script src="raphael-2.1.4.min.js"></script>
+        <script src="justgage.js"></script>
+
+        <!--REAL TIME CHART FILES-->
+        <script type="text/javascript" src="smoothie.js"></script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="styling.css" type="text/css" rel="stylesheet" />
+	</head>
+
+<body>
+
+	<h1>SolenoidECU</h1>
+
+    <div class="mainDiv">
+        <h2>Engine info:</h2>
+
+        <div id="infoContainer">
+            <div class="infoDiv">
+
+                <div id="rpmGauge"></div>
+
+                <canvas id="rpmChart" width="250" height="150"></canvas>
+
+            </div>
+
+            <div class="infoDiv">
+
+                <p>Solenoid ignition:</p>
+                <input type="button" id="ignitionBtn" class="onOffBtn" value="OFF"><br>
+
+                <p>Ignition mode:</p>
+                <input type="button" id="stroke2Btn" value="2 Stroke">
+                <input type="button" id="stroke4Btn" value="4 Stroke">
+
+            </div>
+
+            <div class="infoDiv sensorDiv">
+                <table id="infoTable">
+                    <tr>
+                        <td><p>Sensor 1 value:</p></td>
+                        <td><span id="sensor1Text">0</span></td>
+                    </tr>
+                    <tr>
+                        <td><p>Sensor 2 value:</p></td>
+                        <td><span id="sensor2Text">0</span></td>
+                    </tr>
+                    <tr>
+                        <td><p>Solenoid 1 power:</p></td>
+                        <td><span id="solenoid1Text">0</span></td>
+                    </tr>
+                    <tr>
+                        <td><p>Solenoid 2 power:</p></td>
+                        <td><span id="solenoid2Text">0</span></td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+        <h2>Engine control mode:</h2>
+
+        <div id="controlContainer">
+
+            <div class="controlDiv">
+                <input type="button" id="rawControlBtn" value="Raw control">
+    
+                <div id="rawControl">
+                    <p>Solenoid firing delay:</p>
+                    <p id="firingDelayText">ms</p>
+                    <input id="firingDelayInput" type="range" value="10" min="1" max="100"/><br>
+    
+                    <p>Solenoid firing duration:</p>
+                    <p id="firingDurationText">ms</p>
+                    <input id="firingDurationInput" type="range" value="10" min="1" max="100"/><br>
+                    
+                    <div id="testSlider"></div>
+
+                </div>
+            </div>
+                
+            <div class="controlDiv">
+                <input type="button" id="pidControlBtn" value="Pid control">
+    
+                <div id="pidControl">
+                    <p>RPM target:</p>
+                    <p id="rpmTargetText">RPM</p>
+                    <input id="rpmTargetInput" type="range" value="150" min="100" max="1000"/><br>
+
+                    <p>PID values:</p>
+                    <p id="pidValuesText">Kp: <span id="KpText"></span> Ki: <span id="KiText"></span> Kd: <span id="KdText"></span></p>
+                </div>
+            </div>
+
+        </div>
+
+        
+        
+        
+        
+        
+
+        <h2>Log:</h2>
+        <div class="multilineText" id='logDiv'></div>
+    </div>
+
+	<script src="/client.js"></script>
+	
+</body>
+
+</html>
