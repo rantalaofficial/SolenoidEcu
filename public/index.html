@@ -23,8 +23,10 @@
 	</head>
 
 <body>
-
-	<h1>SolenoidECU</h1>
+    <header>
+        <h1>SolenoidECU</h1>
+    </header>
+	
 
     <div class="mainDiv">
         <h2>Engine info:</h2>
@@ -52,27 +54,23 @@
             <div class="infoDiv sensorDiv">
                 <table id="infoTable">
                     <tr>
-                        <td><p>Sensor 1 value:</p></td>
-                        <td><span id="sensor1Text">0</span></td>
+                        <td><p>Sensor 1 & 2 values:</p></td>
+                        <td><span id="sensor1Text">0</span>, <span id="sensor2Text">0</span></td>
                     </tr>
                     <tr>
-                        <td><p>Sensor 2 value:</p></td>
-                        <td><span id="sensor2Text">0</span></td>
+                        <td><p>Solenoid 1 & 2 power:</p></td>
+                        <td><span id="solenoid1Text">0</span>, <span id="solenoid2Text">0</span></td>
                     </tr>
                     <tr>
-                        <td><p>Solenoid 1 power:</p></td>
-                        <td><span id="solenoid1Text">0</span></td>
-                    </tr>
-                    <tr>
-                        <td><p>Solenoid 2 power:</p></td>
-                        <td><span id="solenoid2Text">0</span></td>
+                        <td><p>Solenoid 1 & 2 stroke:</p></td>
+                        <td><span id="solenoid1StrokeNum">1</span>, <span id="solenoid2StrokeNum">2</span></td>
                     </tr>
                 </table>
             </div>
 
         </div>
 
-        <h2>Engine control mode:</h2>
+        <h2>Engine control <span id="gayPony" style="color: #383838">mode:</span></h2>
 
         <div id="controlContainer">
 
@@ -108,16 +106,11 @@
 
         </div>
 
-        
-        
-        
-        
-        
-
         <h2>Log:</h2>
         <div class="multilineText" id='logDiv'></div>
     </div>
 
+    <script src="/gayPonyControlMode.js"></script>
 	<script src="/client.js"></script>
 	
 </body>

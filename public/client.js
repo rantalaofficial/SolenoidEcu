@@ -35,11 +35,11 @@ $(document).ready(() => {
         socket.emit('SET', inputs);
     });
     $('#stroke2Btn').click(() => {
-        inputs._2stroke = true;
+        inputs._2strokeMode = true;
         socket.emit('SET', inputs);
     });
     $('#stroke4Btn').click(() => {
-        inputs._2stroke = false;
+        inputs._2strokeMode = false;
         socket.emit('SET', inputs);
     });
 
@@ -66,7 +66,7 @@ $(document).ready(() => {
         socket.emit('SET', inputs);
     });
 
-
+    $('#gayPony').dblclick(() => {ActivateGayPonyControlMode()});
 });
 
 function initRPMChart() {
@@ -111,7 +111,7 @@ socket.on('disconnect', () => {
 
 
 function updateInputs(inputs) {
-    if(inputs._2stroke) {
+    if(inputs._2strokeMode) {
         $('#stroke2Btn').addClass('pressed');
         $('#stroke4Btn').removeClass('pressed');
     } else {
@@ -168,6 +168,9 @@ function updateOutputs(outputs) {
 
     $('#solenoid1Text').text(outputs.solenoid[0]);
     $('#solenoid2Text').text(outputs.solenoid[1]);
+
+    $('#solenoid1StrokeNum').text(outputs.strokeNum[0]);
+    $('#solenoid2StrokeNum').text(outputs.strokeNum[1]);
 }
 
 function disableDiv(id, state) {
@@ -208,3 +211,4 @@ function updateLog(log) {
 
     $('#logDiv').scrollTop($('#logDiv')[0].scrollHeight - $('#logDiv').height());
 }
+

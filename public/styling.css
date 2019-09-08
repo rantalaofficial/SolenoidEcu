@@ -4,7 +4,25 @@
 }
 
 body {
-    background-color: #e2e2e2;
+    background-color: #eff6ff;
+}
+
+html, body {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+h1 {
+    margin-top: 0px;
+    margin-bottom: 5vh;
+    padding: 10px; 
+    color: white;
+    text-shadow: 2px 2px 4px black; 
+}
+
+header {
+    background-color: #8db6ff;
+    box-shadow: 0px 5px 5px gray;
 }
 
 .mainDiv {
@@ -13,7 +31,7 @@ body {
     background-color: #bebebe;
     padding: 10px;
     max-width: 1000px;
-    box-shadow: 5px 5px 5px gray;
+    box-shadow: 3px 3px 10px black;
 }
 
 h2, p {
@@ -163,7 +181,8 @@ input[type=range]::-moz-range-thumb {
 
     h1 {
         margin: 0px;
-        margin-bottom: 2px;
+        margin-bottom: 15px;
+        padding: 5px; 
     }
 
     #stroke2Btn {
